@@ -88,6 +88,8 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+let lengeth = NaN;
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   var passwordLength = parseInt(
@@ -95,7 +97,16 @@ function getPasswordOptions() {
   );
   if (isNaN(length) || length < 8 || length > 128) {
     alert('Password length must be between 8 and 128 characters');
-    
+    return;
+  };
+
+  const specialCharacters = confirm('Click OK to confirm including special characters.'); 
+  const numericCharacters = confirm('Click OK to confirm including numeric characters.');
+  const lowerCasedCharacters = confirm('Click OK to confirm including lowercase characters.');
+  const upperCasedCharacters = confirm('Click OK to confirm including uppercase characters.');
+  if (!specialCharacters && !numericCharacters && !lowerCasedCharacters && !upperCasedCharacters) {
+    alert('Please select at least one character type.');
+    return getPasswordOptions();
   }
 }
 
