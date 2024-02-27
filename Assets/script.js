@@ -88,7 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-let lengeth = NaN;
+let length = NaN;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -108,11 +108,18 @@ function getPasswordOptions() {
     alert('Please select at least one character type.');
     return getPasswordOptions();
   }
+  return {
+    passwordLength,
+    specialCharacters,
+    numericCharacters,
+    lowerCasedCharacters,
+    upperCasedCharacters,
+  }
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  const randomGen = Math.random()
 }
 
 // Function to generate password with user input
